@@ -1,0 +1,67 @@
+[class*="item"] {
+  color: white;
+  border: 1px solid black;
+  padding: 2em;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: CornflowerBlue; }
+
+.flex-container {
+  display: none; }
+  .flex-container [class*="item"] {
+    width: 50px; }
+
+.grid--basic {
+  display: grid;
+  display: none;
+  grid-template-rows: 10em 10em 10em 10em;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: repeat(4, 25%);
+  grid-template: repeat(4, 10em)/repeat(4, 25%); }
+
+.grid--named-area {
+  display: grid;
+  display: none;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  grid-template: 10em 1fr auto 1fr 1fr 10vh / 5% 1fr 1fr 1fr 1fr 5%;
+  grid-gap: 0.5em;
+  grid-template-areas: "title title title title title title" ". sidebar content1 content1 content1 ." ". sidebar content2 content2 thumb ." ". . . . . ." ". content3 content3 content3 content3 ." "footer footer footer footer footer footer"; }
+  .grid--named-area div {
+    color: black;
+    border: 1px solid black;
+    padding: 2em;
+    font-family: sans-serif;
+    text-align: center; }
+  .grid--named-area .title {
+    background-color: CornflowerBlue;
+    grid-area: title;
+    font-size: 26px; }
+  .grid--named-area .sidebar {
+    background-color: gray;
+    grid-area: sidebar; }
+    @media (max-width: 767px) {
+      .grid--named-area .sidebar {
+        display: none; } }
+  .grid--named-area .thumbnail {
+    background-color: DarkOrchid;
+    grid-area: thumb; }
+  .grid--named-area [class*="content"] {
+    text-align: left;
+    padding: 14px;
+    background-color: crimson; }
+  .grid--named-area .content-1 {
+    grid-area: content1; }
+  .grid--named-area .content-2 {
+    grid-area: content2; }
+  .grid--named-area .content-3 {
+    grid-area: content3; }
+  .grid--named-area .footer {
+    grid-area: footer;
+    background-color: black; }
+  @media (max-width: 767px) {
+    .grid--named-area {
+      grid-template-areas: "title title title title title title" ". content1 content1 content1 content1 ." ". content2 content2 content2 content2." ". . . . thumb ." ". content3 content3 content3 content3 ." "footer footer footer footer footer footer"; } }
